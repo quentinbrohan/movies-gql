@@ -1,0 +1,2 @@
+require('./movie');
+require('./review');

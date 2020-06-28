@@ -1,0 +1,14 @@
+@import "client/src/styles/vars";
+
+.movie-detail {
+}
+.errors {
+  margin-top: $gutter;
+  .error-message {
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid $colRed;
+    background-color: rgba($colRed, 0.15);
+    color: $colRed;
+  }
+}

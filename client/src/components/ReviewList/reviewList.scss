@@ -1,0 +1,41 @@
+@import "client/src/styles/vars";
+
+.review-list {
+  .reviews {
+    margin-bottom: 2rem;
+    .review {
+      padding: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: darken($colWhite, 5);
+      margin-bottom: 0.5rem;
+      border-radius: 0.1rem;
+      &:hover {
+        background-color: darken($colWhite, 10);
+      }
+      .like {
+        user-select: none;
+        display: flex;
+        align-items: center;
+        color: $colRed;
+        text-align: right;
+        cursor: pointer;
+        svg.button-like-full {
+            fill: $colRed;
+        }
+        .button-like-full,
+        .button-like {
+          margin-right: 0.25rem;
+          svg {
+            &:hover {
+              fill: $colRed;
+              border-color: 1px solid $colWhite;
+              transition: all ease-in-out 0.15s;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+@import 'reset';
+@import 'vars';
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../assets/fonts/Montserrat-Regular.ttf');
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: $colBlack;
+  background-color: $colWhite;
+  @media (max-width: 500px) {
+    padding: 1rem;
+  }
+}
+
+h1 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+a button,
+button {
+  margin-top: $gutter;
+  padding: 0.5rem 1rem;
+  border: 1px solid $colGrey;
+  background-color: $colWhite;
+  border-radius: 0.1rem;
+  &:hover {
+    transform: translateY(-0.1rem);
+    box-shadow: 0 0.1rem 0.1rem rgba($colBlack, 0.35);
+  }
+}

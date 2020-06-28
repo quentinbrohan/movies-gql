@@ -1,0 +1,32 @@
+@import 'client/src/styles/vars';
+
+.movies-list {
+  padding: 1rem;
+  margin-bottom: 1rem;
+
+  .movie {
+    padding: 1rem 0;
+    border-bottom: 1px solid $colBlack;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    svg {
+      color: $colBlack;
+    }
+  }
+
+  svg.button {
+    &-delete {
+      cursor: pointer;
+      &:hover {
+        color: $colRed;
+        transition: color ease-in 0.15s;
+      }
+    }
+  }
+}
+
+  
+
+
