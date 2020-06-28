@@ -9,7 +9,7 @@ Découverte Apollo Client pour gestion des states, mise en place d'un serveur Gr
 
 Front: React, Apollo Client
 
-Back: Node // Express, GraphQL, Mongoose
+Back: Node, Express, GraphQL, Mongoose
 
 ![](movies-gql.gif)
 
