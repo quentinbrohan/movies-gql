@@ -1,11 +1,11 @@
 # Movies GQL
 
-Découverte Apollo Client pour gestion des states, mise en place d'un serveur GraphQL directement connecté à une BDD MongoDB pour les datas.
+Discovery of Apollo Client to manage state, and GraphQL + setup Node server directly connected to a MongoDB database.
 
-- Ajouter/supprimer un film
-- Consulter la fiche du film
-- Ajouter une review
-- Liker une review
+- Add/Delete a movie
+- View movie post
+- Add a review to a movie
+- Like a review
 
 Front: React, Apollo Client
 
@@ -13,7 +13,7 @@ Back: Node, Express, GraphQL, Mongoose
 
 ![](movies-gql.gif)
 
-## Lancement
+## Launch
 
 ```
 yarn
@@ -21,4 +21,4 @@ yarn
 yarn dev
 ```
 
-[L'app est disponible sur localhost:4000](http://localhost:4000/)
+[View app on localhost:4000](http://localhost:4000/)
