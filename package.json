@@ -3,7 +3,7 @@
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-dev-server --config config/webpack.dev.js --open",
     "build": "cross-env NODE_ENV=production webpack --config config/webpack.prod.js",
-    "dev": "nodemon index.js --ignore client",
+    "dev": "nodemon -r dotenv/config index.js --ignore client",
     "lint": "eslint src/**/*.js",
     "lint:fix": "eslint --fix src/**/*.js",
     "clean": "rm -rf dist",
@@ -23,7 +23,7 @@
     "cross-env": "*",
     "css-loader": "*",
     "cssnano": "*",
-    "eslint": "*",
+    "eslint": "6.8",
     "eslint-config-airbnb": "*",
     "eslint-import-resolver-alias": "*",
     "eslint-plugin-import": "*",
@@ -42,9 +42,9 @@
     "style-loader": "*",
     "terser-webpack-plugin": "*",
     "webpack": "*",
-    "webpack-cli": "*",
+    "webpack-cli": "^3.3.11",
     "webpack-dev-server": "*",
-    "webpack-merge": "*"
+    "webpack-merge": "^4.2.2"
   },
   "dependencies": {
     "@apollo/react-hooks": "^3.1.5",
@@ -55,6 +55,8 @@
     "axios": "^0.19.2",
     "body-parser": "^1.19.0",
     "connect-mongo": "^3.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-graphql": "^0.9.0",
     "express-session": "^1.17.1",

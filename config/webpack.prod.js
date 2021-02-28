@@ -1,22 +1,22 @@
-const paths = require('./paths');
-const merge = require('webpack-merge');
-const common = require('./webpack.common.js');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const TerserJSPlugin = require('terser-webpack-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const { BundleStatsWebpackPlugin } = require('bundle-stats-webpack-plugin');
+const paths = require("./paths");
+const merge = require("webpack-merge");
+const common = require("./webpack.common.js");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const TerserJSPlugin = require("terser-webpack-plugin");
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const { BundleStatsWebpackPlugin } = require("bundle-stats-webpack-plugin");
 
 module.exports = merge.smart(common, {
-  mode: 'production',
+  mode: "production",
   devtool: false,
   output: {
     path: paths.build,
-    publicPath: './',
-    filename: 'js/[name].[contenthash].js',
+    publicPath: "./",
+    filename: "js/[name].[contenthash].js",
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'css/[name].css',
+      filename: "css/[name].css",
     }),
     // Stats bundle
     new BundleStatsWebpackPlugin(),
@@ -28,18 +28,18 @@ module.exports = merge.smart(common, {
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
-            options: { publicPath: '../' },
+            options: { publicPath: "../" },
           },
           {
-            loader: 'css-loader',
+            loader: "css-loader",
             options: { importLoaders: 3 },
           },
-          'postcss-loader',
-          'resolve-url-loader',
+          "postcss-loader",
+          "resolve-url-loader",
           {
-            loader: 'sass-loader',
+            loader: "sass-loader",
             options: {
-              implementation: require('sass'),
+              implementation: require("sass"),
             },
           },
         ],
@@ -57,9 +57,9 @@ module.exports = merge.smart(common, {
 
   optimization: {
     minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
-    runtimeChunk: 'single',
+    runtimeChunk: "single",
     splitChunks: {
-      chunks: 'all',
+      chunks: "all",
     },
   },
   performance: {

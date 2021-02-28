@@ -1,27 +1,23 @@
-/* eslint-disable no-shadow */
-/* eslint-disable import/no-unresolved */
-/* eslint-disable jsx-a11y/label-has-associated-control */
-import React from 'react';
-import { graphql } from 'react-apollo';
-import { flowRight as compose } from 'lodash';
-import PropTypes from 'prop-types';
-
-import createReviewMutation from 'src/queries/createReview';
-import './reviewCreate.scss';
+import { flowRight as compose } from "lodash";
+import PropTypes from "prop-types";
+import React from "react";
+import { graphql } from "react-apollo";
+import addReviewMutation from "src/graphql/mutations/addReview";
+import "./reviewCreate.scss";
 
 const ReviewCreate = ({
-  inputReviewValue,
-  changeInputReviewValue,
-  manageReviewSubmit,
+  reviewValue,
+  onChangeReviewValue,
+  handleReviewSubmit,
   movieId,
 }) => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    manageReviewSubmit(movieId);
+    handleReviewSubmit(movieId);
   };
 
-  const updateInput = (inputReviewValue) => {
-    changeInputReviewValue(inputReviewValue);
+  const updateInput = (reviewValue) => {
+    onChangeReviewValue(reviewValue);
   };
 
   return (
@@ -36,26 +32,24 @@ const ReviewCreate = ({
           placeholder="Ma review"
           // eslint-disable-next-line jsx-a11y/no-autofocus
           autoFocus
-          value={inputReviewValue}
+          value={reviewValue}
           onChange={(evt) => updateInput(evt.currentTarget.value)}
         />
         <button type="submit">Ajouter la review</button>
-
       </form>
     </div>
   );
 };
 
 ReviewCreate.propTypes = {
-  inputReviewValue: PropTypes.string.isRequired,
+  reviewValue: PropTypes.string.isRequired,
   movieId: PropTypes.string.isRequired,
-  changeInputReviewValue: PropTypes.func.isRequired,
-  manageReviewSubmit: PropTypes.func.isRequired,
-
+  onChangeReviewValue: PropTypes.func.isRequired,
+  handleReviewSubmit: PropTypes.func.isRequired,
 };
 
 export default compose(
-  graphql(createReviewMutation, {
-    name: 'createReviewMutation',
-  }),
+  graphql(addReviewMutation, {
+    name: "addReviewMutation",
+  })
 )(ReviewCreate);

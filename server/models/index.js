@@ -1,2 +1,2 @@
-require('./movie');
-require('./review');
+require("./movie");
+require("./review");
